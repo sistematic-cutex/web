@@ -36,20 +36,20 @@ class ProvidersController extends Controller
     //mostrar detalles
     public function show($id)
     {
-        $product = Provider::find($id);
+        $provider = Provider::find($id);
         return view('providers.show', compact('provider'));
     }
     //editar
     public function edit($id)
     {
-        $product = Provider::find($id);
+        $provider = Provider::find($id);
 
         return view('providers.edit', compact('provider'));
     }
     //actualizar
     public function update(Request $request, $id)
     {
-        $product = Provider::find($id)->update($request->all());
+        $provider = Provider::find($id)->update($request->all());
         return redirect()->route('proveedores');
     }
 }
