@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('cellphone', 20);
             $table->string('email', 125);
             $table->string('address', 125);
-            $table->enum('status', ["active", "inactive"]);
+            $table->enum('status', ["active", "inactive"])->default("active");
             $table->timestamps();
         });
     }
