@@ -57,103 +57,22 @@
         <!--- Menu -->
         <ul class="menu">
             <!--Titulo descripcion -->
-            <li class="menu-title">Navigation</li>
+            <li class="menu-title">Navegación</li>
             <li class="menu-item">
-                <a href="apps-calendar.html" class="menu-link">
-                    <span class="menu-icon"><i data-feather="calendar"></i></span>
-                    <span class="menu-text"> Calendar </span>
+                <a href="{{ route("proveedores") }}" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-users"></i></span>
+                    <span class="menu-text"> Proveedores </span>
                 </a>
             </li>
 
             <li class="menu-item">
-                <a href="#menuEcommerce" data-bs-toggle="collapse" class="menu-link">
-                    <span class="menu-icon"><i data-feather="shopping-cart"></i></span>
-                    <span class="menu-text"> desplegable </span>
-                    <span class="menu-arrow"></span>
+                <a href="{{ route("") }}" class="menu-link">
+                    <span class="menu-icon"><i class="fa-solid fa-newspaper"></i></span>
+                    <span class="menu-text"> Nombre </span>
                 </a>
-                <div class="collapse" id="menuEcommerce">
-                    <ul class="sub-menu">
-                        <li class="menu-item">
-                            <a href="ecommerce-dashboard.html" class="menu-link">
-                                <span class="menu-text">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="ecommerce-products.html" class="menu-link">
-                                <span class="menu-text">Products</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </li>
 
-            <li class="menu-item">
-                <a href="#menuMultilevel" data-bs-toggle="collapse" class="menu-link">
-                    <span class="menu-icon"><i data-feather="share-2"></i></span>
-                    <span class="menu-text"> Multi Level </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="menuMultilevel">
-                    <ul class="sub-menu">
-                        <li class="menu-item">
-                            <a href="#menuMultilevel2" data-bs-toggle="collapse" class="menu-link">
-                                <span class="menu-text"> Second Level </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="menuMultilevel2">
-                                <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="javascript: void(0);" class="menu-link">
-                                            <span class="menu-text">Item 1</span>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="javascript: void(0);" class="menu-link">
-                                            <span class="menu-text">Item 2</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#menuMultilevel3" data-bs-toggle="collapse" class="menu-link">
-                                <span class="menu-text">Third Level</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="menuMultilevel3">
-                                <ul class="sub-menu">
-                                    <li class="menu-item">
-                                        <a href="javascript: void(0);" class="menu-link">
-                                            <span class="menu-text">Item 1</span>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item">
-                                        <a href="#menuMultilevel4" data-bs-toggle="collapse" class="menu-link">
-                                            <span class="menu-text">Item 2</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <div class="collapse" id="menuMultilevel4">
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="javascript: void(0);" class="menu-link">
-                                                        <span class="menu-text">Item 1</span>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="javascript: void(0);" class="menu-link">
-                                                        <span class="menu-text">Item 2</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+           
         </ul>
         <!--- End Menu -->
         <div class="clearfix"></div>

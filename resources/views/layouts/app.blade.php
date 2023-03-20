@@ -8,6 +8,7 @@
 		<link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="app-style" />
 		<link href="{{ url('css/app.min.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ url('css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <div id="wrapper">
