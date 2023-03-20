@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email', 125);
             $table->string('address', 125);
             $table->enum('status', ["active", "inactive"])->default("active");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

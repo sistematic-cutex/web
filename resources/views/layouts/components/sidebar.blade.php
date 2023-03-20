@@ -66,7 +66,7 @@
             </li>
 
             <li class="menu-item">
-                <a href="{{ route("") }}" class="menu-link">
+                <a href="" class="menu-link">
                     <span class="menu-icon"><i class="fa-solid fa-newspaper"></i></span>
                     <span class="menu-text"> Nombre </span>
                 </a>
