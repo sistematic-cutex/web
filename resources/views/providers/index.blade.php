@@ -31,7 +31,7 @@
                     <td>{{ $provider-> status }}</td>
                     <td>
                         <form action="{{ route('proveedores.eliminar', $provider->id) }}" method="POST">
-                        <a href="" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                        <a href="{{ route('proveedores.editar', $provider->id) }}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
                         <a href="" class="action-icon"> <i class="mdi mdi-delete"></i></a>
                     </form>
                     </td>
