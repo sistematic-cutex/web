@@ -17,7 +17,6 @@ class Provider extends Model
         'admin_name',
         'cellphone',
         'email',
-        'image',
         'address',
         'status'
     ];

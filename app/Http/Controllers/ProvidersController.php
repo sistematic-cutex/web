@@ -17,11 +17,11 @@ class ProvidersController extends Controller
         return view('providers.index', compact('providers'));
     }
     //crear
-    public function create()
-    {
-        return view('providers.create');
-    }
-    //(retornar vista proveedores)
+    // public function create()
+    // {
+    //     return view('providers.create');
+    // }
+    //(guardar datos y retornar proveedores)
     public function store(Request $request)
     {
         Provider::create($request->all());
