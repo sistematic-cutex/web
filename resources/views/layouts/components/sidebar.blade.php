@@ -65,14 +65,15 @@
                 </a>
             </li>
 
+          <!--Titulo descripcion -->
             <li class="menu-item">
-                <a href="" class="menu-link">
-                    <span class="menu-icon"><i class="fa-solid fa-newspaper"></i></span>
-                    <span class="menu-text"> Nombre </span>
+                <a href="{{ route("categorias") }}" class="menu-link">
+                    <span class="menu-icon"><i class="bi bi-bookmark-fill"></i></span>
+                    <span class="menu-text"> categorias </span>
                 </a>
             </li>
 
-           
+
         </ul>
         <!--- End Menu -->
         <div class="clearfix"></div>

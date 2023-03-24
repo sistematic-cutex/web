@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProvidersController;
+use App\Http\Controllers\CategorysController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,19 @@ Route::get('proveedores/{id}', [ProvidersController::class, 'show'])->name('prov
 Route::get('proveedores/{id}/editar', [ProvidersController::class, 'edit'])->name('proveedores.editar');
 //Actualizar Proveedor
 Route::put('proveedores/{id}', [ProvidersController::class, 'update'])->name('proveedores.actualizar');
+
+
+//listar categoria
+Route::get('categorias', [categorysController::class, 'index'])->name('categorias');
+//Crear categoria
+Route::get('categorias/crear', [categoryesController::class, 'create'])->name('categorias.crear');
+//Guardar categoria
+Route::post('categorias', [categorysController::class, 'store'])->name('categorias.guardar');
+//Eliminar categoria
+Route::delete('categorias/{id}', [categorysController::class, 'destroy'])->name('categorias.eliminar');
+//Detalles categoria
+Route::get('categorias/{id}', [categorysController::class, 'show'])->name('categorias.detalles');
+//Editar categoria
+Route::get('categorias/{id}/editar', [categorysController::class, 'edit'])->name('categorias.editar');
+//Actualizar categoria
+Route::put('categorias/{id}', [categorysController::class, 'update'])->name('categorias.actualizar');
