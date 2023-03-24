@@ -16,10 +16,11 @@ return new class extends Migration
             $table->string('name', 45);
             $table->string('nit', 20);
             $table->string('owner_name', 45);
-            $table->date('date');
+            $table->date('date_fundation');
             $table->string('address', 45);
             $table->string('email', 45);
             $table->string('cellphone', 20);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
