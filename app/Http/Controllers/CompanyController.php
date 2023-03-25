@@ -8,21 +8,27 @@ use App\Models\Company;
 class CompanyController extends Controller
 {
     public function index(){
-
+        $companies = Company::all(); 
+        return view ('companies.index', compact('company'));
     }
-    public function store(){
-
+    public function store(Request $request){
+        Company::create($request->all());
+        return redirect()->route('compañias');
     }
-    public function destory(){
-
+    public function destory($id){
+        Company::find($id)->delete();
+        return redirect()->route('compañias');
     }
-    public function show(){
-
+    public function show($id){
+        $companies = Company::find($id);
+        return view('companies.show');
     }
-    public function edit(){
-
+    public function edit($id){
+        $companies = Company::find($id);
+        return view('companies.edit', compact('company'));
     }
     public function update(){
-        
+        $companies = Company::find($id)->update($request->all());
+        return redirect()->route('compañias');
     }
 }
