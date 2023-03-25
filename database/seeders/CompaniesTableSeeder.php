@@ -44,6 +44,7 @@ class CompaniesTableSeeder extends Seeder
             'address' => $company['address'],
             'email' => $company['email'],
             'cellphone' => $company['cellphone']
+            
         ]);
     }
 }

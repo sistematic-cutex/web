@@ -15,7 +15,7 @@ class CompanyController extends Controller
         Company::create($request->all());
         return redirect()->route('compañias');
     }
-    public function destory($id){
+    public function destroy($id){
         Company::find($id)->delete();
         return redirect()->route('compañias');
     }
@@ -26,9 +26,5 @@ class CompanyController extends Controller
     public function edit($id){
         $companies = Company::find($id);
         return view('companies.edit', compact('company'));
-    }
-    public function update(){
-        $companies = Company::find($id)->update($request->all());
-        return redirect()->route('compañias');
     }
 }
