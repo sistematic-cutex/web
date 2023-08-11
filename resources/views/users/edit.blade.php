@@ -31,11 +31,11 @@
                                         </tr>
                                         <tr>
                                             <th>Nombre </th>
-                                            <td><input type="text" class="form-control" name="names" value="{{ $user->names }}" required></td>
+                                            <td><input type="text" class="form-control" name="name" value="{{ $user->name }}" required></td>
                                         </tr>
                                         <tr>
                                             <th>Apellidos</th>
-                                            <td><input type="text" class="form-control" name="surnames" value="{{ $user->surnames }}" required></td>
+                                            <td><input type="text" class="form-control" name="surname" value="{{ $user->surname }}" required></td>
                                         </tr>
                                         <tr>
                                             <th>Rol</th>

@@ -17,8 +17,8 @@
 <body>
   <header>
     <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Nosotros</a>
+      <a href="#Nosotros">Nosotros</a>
+      <a href="#Contacto">Contáctanos</a>
       <a href="{{ route('login') }}">Iniciar sesión</a>
     </nav>
     <section class="textos-header">
@@ -32,28 +32,22 @@
   </header>
   <main>
     <div class="nosotros">
-      <h1 class="texto-nosotros">Peleteria Cueros y Color</h1>
+      <h1 class="texto-nosotros">Bienvenidos a Peleteria Cueros y Color </h1>
+      <h1 class="texto-nosotros">Somos lujo Colombiano</h1>
       <div class="tarjetas">
         <div class="tarjeta">
           <div class="contenedor-tarjeta">
             <h4>Misión</h4>
             <p>
-              1. Trabajamos para el cliente.
-              2. Trabajamos para ser muy transparentes.
-              3. Favorecemos la elegancia y la responsabilidad.
-              4. Creemos que nuestra mejor ventaja son los compañeros increíbles.
-              5. Nos inclinamos por el impacto a largo plazo.
+              Ser la referencia global en la creación de productos en cuero, fusionando tradición e innovación para inspirar el estilo de vida sofisticado y auténtico de nuestros clientes.
             </p>
           </div>
         </div>
-        <div class="tarjeta">
+        <div id="Nosotros" class="tarjeta">
           <div class="contenedor-tarjeta">
             <h4>Visión</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio quae reprehenderit odio. Qui ipsum asperiores
-              doloribus. Perferendis illum atque, at doloremque quia
-              consequatur in tempora ratione vitae, accusantium debitis iusto.
+              "Nuestra misión es articular la elegancia y durabilidad del cuero en productos excepcionales, comprometiéndonos a ofrecer calidad insuperable, diseños vanguardistas y satisfacción total a nuestros clientes, respaldados por un enfoque constante en la excelencia artesanal y la innovación continua.
             </p>
           </div>
         </div>
@@ -68,10 +62,7 @@
           <div class="contenedor-tarjeta">
             <h4>Calidad</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio quae reprehenderit odio. Qui ipsum asperiores
-              doloribus. Perferendis illum atque, at doloremque quia
-              consequatur in tempora ratione vitae, accusantium debitis iusto.
+              Nos comprometemos a garantizar la excelencia en cada detalle, seleccionando los mejores materiales y aplicando una artesanía meticulosa para ofrecer productos en cuero que perduren en el tiempo, reflejando nuestra búsqueda inquebrantable de la máxima calidad y satisfacción del cliente.
             </p>
           </div>
         </div>
@@ -79,10 +70,7 @@
           <div class="contenedor-tarjeta">
             <h4>Puntualidad</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio quae reprehenderit odio. Qui ipsum asperiores
-              doloribus. Perferendis illum atque, at doloremque quia
-              consequatur in tempora ratione vitae, accusantium debitis iusto.
+              Nuestra puntualidad es un valor fundamental; nos esforzamos por cumplir con los plazos de entrega de manera precisa y confiable, asegurando que nuestros clientes disfruten de sus productos en cuero a tiempo, reflejando nuestro compromiso con la confianza y satisfacción del cliente.
             </p>
           </div>
         </div>
@@ -90,10 +78,7 @@
           <div class="contenedor-tarjeta">
             <h4>Innovación</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Distinctio quae reprehenderit odio. Qui ipsum asperiores
-              doloribus. Perferendis illum atque, at doloremque quia
-              consequatur in tempora ratione vitae, accusantium debitis iusto.
+              Abrazamos la innovación como motor de nuestro progreso, fusionando la rica tradición del cuero con soluciones vanguardistas. A través de la investigación constante y el diseño creativo, llevamos la innovación al corazón de nuestros productos en cuero, para superar las expectativas de nuestros clientes y liderar la evolución de la industria.
             </p>
           </div>
         </div>
@@ -106,7 +91,7 @@
   <br />
   <br />
   <footer>
-    <div class="contenedor-footer">
+    <div id="Contacto"class="contenedor-footer">
       <div class="contenedor-foot">
         <h4>Email:</h4>
         <p>peleteria@gmail.com</p>

@@ -5,8 +5,9 @@
         <a href="index.html" class="logo-dark">
             <img src="{{ url('images/logo.jpg')}}" alt="dark logo sdfsdfsdfdsdfsdfsdfdsfsdf" width="100" height="100">
         </a>
-        <p> {{ Auth::user()->names }}</p>
-        <span> {{ Auth::user()->names }}</span>
+        <br><br><br><br><br><br><br>
+        
+        <h5> {{ Auth::user()->name }}</h5>
     </div>
 
     <!-- menu-left -->
