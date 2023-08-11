@@ -9,7 +9,7 @@
                 <div class="card border-success border mb-3">
                     <div class="card-header">
                         <h1 class="ms-3">Detalles del usuario</h1> 
-                        <h1 class="ms-3">{{ $user->names }}</h1>
+                        <h1 class="ms-3">{{ $user->name }}</h1>
                     </div>
                     <div class="card-body">
                         <table class="table table-centered table-nowrap table-hover mb-0">
@@ -28,11 +28,11 @@
                             </tr>
                             <tr>
                                 <th>Nombre</th>
-                                <td>{{ $user->names }}</td>
+                                <td>{{ $user->name }}</td>
                             </tr>
                             <tr>
                                 <th>Apellido</th>
-                                <td>{{ $user->surnames }}</td>
+                                <td>{{ $user->surname }}</td>
                             </tr>
                             <tr>
                                 <th>Rol</th>

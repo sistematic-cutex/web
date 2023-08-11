@@ -58,4 +58,13 @@ class ClientsController extends Controller
 
         return view('clients.invoice', compact('invoices', 'client'));
     }
+    //actualizar
+    public function update(Request $request, $id)
+    {
+        // Guarda un mensaje de éxito en la sesión
+        session()->flash('success', 'Cliente actualizado correctamente');
+
+        $client = Client::find($id)->update($request->all());
+        return redirect()->route('clientes')->with('message', session('success'));;
+    }
 }

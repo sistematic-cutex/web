@@ -50,9 +50,9 @@
                                         <td> {{ $user->id }}</td>
                                         <td class="table-user">
                                             <a href="{{ route('usuarios.detalles', $user->id) }}"
-                                                class="text-body fw-semibold">{{ $user->names }}</a>
+                                                class="text-body fw-semibold">{{ $user->name }}</a>
                                         </td>
-                                        <td>{{ $user->surnames }}</td>
+                                        <td>{{ $user->surname }}</td>
                                         <td>
                                             @foreach($roles as $rol)
                                                 @if($user->rol_id == $rol->id)
@@ -171,11 +171,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" name="names" required>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" name="surnames" required>
+                        <input type="text" class="form-control" name="surname" required>
                     </div>
                     
                     <div class="mb-3">

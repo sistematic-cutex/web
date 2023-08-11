@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
     {
         $users = [
             [
-                'names' => 'Katerine',
-                'surnames' => 'Ordoñez',
+                'name' => 'Katerine',
+                'surname' => 'Ordoñez',
                 'document_number' => '1083814056',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '3124314528',
@@ -31,8 +31,8 @@ class UsersTableSeeder extends Seeder
 
 
             [
-                'names' => 'Carlos',
-                'surnames' => 'Lopez',
+                'name' => 'Carlos',
+                'surname' => 'Lopez',
                 'document_number' => '1083814045',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '3124314512',
@@ -44,8 +44,8 @@ class UsersTableSeeder extends Seeder
                 'password' => 'prueba123'
             ],
             [
-                'names' => 'Samanta',
-                'surnames' => 'Herrera',
+                'name' => 'Samanta',
+                'surname' => 'Herrera',
                 'document_number' => '1083814089',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '3124314556',
@@ -57,8 +57,8 @@ class UsersTableSeeder extends Seeder
                 'password' => 'prueba123'
             ],
             [
-                'names' => 'Sebastian',
-                'surnames' => 'Caicedo',
+                'name' => 'Sebastian',
+                'surname' => 'Caicedo',
                 'document_number' => '10014068975',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '31243145296',
@@ -70,8 +70,8 @@ class UsersTableSeeder extends Seeder
                 'password' => 'prueba123'
             ],
             [
-                'names' => 'Elena',
-                'surnames' => 'Sandobal Peña',
+                'name' => 'Elena',
+                'surname' => 'Sandobal Peña',
                 'document_number' => '1004415278',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '3137256892',
@@ -83,8 +83,8 @@ class UsersTableSeeder extends Seeder
                 'password' => 'prueba123'
             ],
             [
-                'names' => 'Santiago',
-                'surnames' => 'Alarcon',
+                'name' => 'Santiago',
+                'surname' => 'Alarcon',
                 'document_number' => '1083812659',
                 'address' => 'Calle 45 Cra12 # 12-78',
                 'cellphone' => '3124311235',
@@ -99,8 +99,8 @@ class UsersTableSeeder extends Seeder
         ];
         foreach ($users as $user) {
             User::create([
-                'names' => $user['names'],
-                'surnames' => $user['surnames'],
+                'name' => $user['name'],
+                'surname' => $user['surname'],
                 'document_number' => $user['document_number'],
                 'address' => $user['address'],
                 'cellphone' => $user['cellphone'],
