@@ -59,6 +59,15 @@
                                                     {{ $rol->name }}
                                                 @endif
                                             @endforeach
+                                            <div class="text-left">
+                                                <form action="{{ route('impersonar.comenzar', compact('user')) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-info btn-xs">Ver como</button>
+                                                </form>
+                                            </div>
+                                            
+                                        
+                                            
                                         </td>
                                         <td>
                                             <form action="{{ route('usuarios.estado', $user->id) }}" method="POST">

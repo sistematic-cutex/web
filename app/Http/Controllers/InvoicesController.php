@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Client;
 use App\Models\Document;
 use App\Models\Product;
+use App\Models\Notification;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Detail;
@@ -90,6 +91,19 @@ class InvoicesController extends Controller
 
                 Detail::create($dataInsert);
             }
+        }
+
+        // Para notificaciones
+
+        $users = User::all();
+        foreach ($users as $user) {
+            Notification::create([
+                'title' => 'Se ha creado una factura',
+                'message' => 'El usuario ' . Auth::user()->name . ' ha creado la factura ' . $invoiceSave->id,
+                'type' => 'invoice',
+                'reference' => $invoiceSave->id,
+                'user_id' => $user['id']
+            ]);
         }
 
         // Guarda un mensaje de éxito en la sesión

@@ -62,7 +62,9 @@ class ClientsController extends Controller
     public function update(Request $request, $id)
     {
         // Guarda un mensaje de éxito en la sesión
-        session()->flash('success', 'Cliente actualizado correctamente');
+        session()->flash('success', 'Cliente ac
+        
+        tualizado correctamente');
 
         $client = Client::find($id)->update($request->all());
         return redirect()->route('clientes')->with('message', session('success'));;
