@@ -22,7 +22,7 @@
 
             <!-- Notofication dropdown -->
             <li class="dropdown notification-list">
-                <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" href="{{ route('notificaciones') }}" role="button">
                     <i class="fe-bell font-22"></i>
                     <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
                 </a>

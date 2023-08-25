@@ -9,7 +9,9 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\NotificationController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ImpersonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return redirect()->route('usuarios');
     })->name('dashboard');
+
+    //Impersonate
+    Route::post('impersonate/{user}/start', [ImpersonationController::class, 'start'])->name('impersonar.comenzar');
+    // Route::post('impersonate/{user}/start', ['ImpersonationController@start', 'impersonate'])->name('impersonar.comenzar');
+    Route::post('impersonate/{user}/stop', ['ImpersonationController@stop', 'impersonate'])->name('impersonar.detener');
 
     //Proveedores
     //listar Proveedor
@@ -150,4 +157,7 @@ Route::middleware([
     //Reportes 
     Route::get('reportes', [ReportsController::class, 'index'])->name('reportes');
     Route::get('obtenerReportes', [ReportsController::class, 'getReports'])->name('obtenerReportes');
+
+    //Notificaciones
+    Route::get('notificaciones', [NotificationController::class, 'index'])->name('notificaciones');
 });

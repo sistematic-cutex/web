@@ -9,6 +9,7 @@ use App\Models\Provider;
 use App\Models\Color;
 use App\Models\Subcategory;
 use App\Models\User;
+use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -53,7 +54,18 @@ class ProductsController extends Controller
         // Guarda un mensaje de éxito en la sesión
         session()->flash('success', 'Producto creado correctamente');
 
-        Product::create($request->all());
+        $product = Product::create($request->all());
+
+        $users = User::all();
+        foreach ($users as $user) {
+            Notification::create([
+                'title' => 'Se ha creado un producto',
+                'message' => 'El usuario ' . Auth::user()->name . ' ha creado el producto ' . $request['name'],
+                'type' => 'product',
+                'reference' => $product['id'],
+                'user_id' => $user['id']
+            ]);
+        }
         return redirect()->route('productos')->with('message', session('success'));
     }
     //Eliminar--> retorno vista proveedores
