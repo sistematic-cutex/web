@@ -7,11 +7,9 @@ use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ReportsController;
-use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NotificationController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\ImpersonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,27 +22,21 @@ use App\Http\Controllers\ImpersonationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
 
 //loguin and register
 
 Route::middleware([
-    'auth:sanctum',
+    'auth',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
         return redirect()->route('usuarios');
     })->name('dashboard');
-
-    //Impersonate
-    Route::post('impersonate/{user}/start', [ImpersonationController::class, 'start'])->name('impersonar.comenzar');
-    // Route::post('impersonate/{user}/start', ['ImpersonationController@start', 'impersonate'])->name('impersonar.comenzar');
-    Route::post('impersonate/{user}/stop', ['ImpersonationController@stop', 'impersonate'])->name('impersonar.detener');
-
+    Route::impersonate();
     //Proveedores
     //listar Proveedor
     Route::get('proveedores', [ProvidersController::class, 'index'])->name('proveedores');
@@ -154,7 +146,7 @@ Route::middleware([
     //Actualizar status Color
     Route::put('colores-status/{id}', [ColorsController::class, 'editStatus'])->name('colores.estado');
 
-    //Reportes 
+    //Reportes
     Route::get('reportes', [ReportsController::class, 'index'])->name('reportes');
     Route::get('obtenerReportes', [ReportsController::class, 'getReports'])->name('obtenerReportes');
 
