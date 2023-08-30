@@ -1,7 +1,7 @@
 <div class="navbar-custom">
     <div class="topbar">
         <div class="topbar-menu d-flex align-items-center gap-1">
-            
+
         </div>
 
         <ul class="topbar-menu d-flex align-items-center">
@@ -18,6 +18,13 @@
                     </form>
                 </div>
             </li>
+
+            <!-- Abandonar imperssonatecomposer require barryvdh/laravel-debugbar --dev -->
+            @impersonating($guard = null)
+            <a href="{{ route('impersonate.leave') }}" class="text-white">
+                Salir <i class="fa fa-user-times" aria-hidden="true"></i>
+            </a>
+            @endImpersonating
 
 
             <!-- Notofication dropdown -->
@@ -178,7 +185,7 @@
                             <span>Cerrar sesión</span>
                         </button>
                     </form>
-                  
+
 
                 </div>
             </li>

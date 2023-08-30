@@ -18,6 +18,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use Impersonate;
 
 
     /**
@@ -39,6 +40,7 @@ class User extends Authenticatable
         'company_id',
         'password'
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -69,4 +71,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function canBeImpersonated()
+    {
+        return $this->rol_id != 1;
+    }
 }
