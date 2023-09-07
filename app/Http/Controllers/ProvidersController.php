@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Provider;
 
@@ -40,7 +41,10 @@ class ProvidersController extends Controller
     public function show($id)
     {
         $provider = Provider::find($id);
-        return view('providers.show', compact('provider'));
+        $products = Product::query()
+            ->where('provider_id', '=', $id)
+            ->get();
+        return view('providers.show', compact('provider', 'products'));
     }
     //editar
     public function edit($id)

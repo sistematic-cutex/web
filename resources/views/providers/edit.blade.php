@@ -28,19 +28,19 @@
                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Nombre Comercial</th>
+                                            <th>Nombre comercial</th>
                                             <td><input type="text" class="form-control" name="business_name" value="{{ $provider->business_name }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Nombre del Administrador</th>
+                                            <th>Nombre del administrador</th>
                                             <td><input type="text" class="form-control" name="admin_name" value="{{ $provider->admin_name }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Telefono</th>
+                                            <th>Telefono / celular</th>
                                             <td><input type="text" class="form-control" name="cellphone" value="{{ $provider->cellphone }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Email</th>
+                                            <th>Correo electrónico</th>
                                             <td><input type="email" class="form-control" name="email" value="{{ $provider->email }}" required></td>
                                         </tr>
                                         <tr>
