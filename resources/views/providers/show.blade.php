@@ -14,15 +14,15 @@
         
                             <!--Inicio de Tabla Detalles-->
                             <tr>
-                                <th>Nombre Comercial</th>
+                                <th>Nombre comercial</th>
                                 <td>{{ $provider->business_name }}</td>
                             </tr>
                             <tr>
-                                <th>Nombre del Administrador</th>
+                                <th>Nombre del administrador</th>
                                 <td>{{ $provider->admin_name }}</td>
                             </tr>
                             <tr>
-                                <th>Telefono</th>
+                                <th>Telefono / celular</th>
                                 <td>{{ $provider->cellphone }}</td>
                             </tr>
                             <tr>
@@ -34,8 +34,12 @@
                                 <td>{{ $provider->address }}</td>
                             </tr>
                             <tr>
-                                <th>Productos</th>
-                                <td></td>
+                                <th>Productos asociados al proveedor</th>
+                                <td>
+                                   @foreach ( $products as $product )
+                                     <p>{{ $product->name }}</p> 
+                                   @endforeach 
+                                </td>
                             </tr>
                             <tr>
                                 <th>Estado:</th>
