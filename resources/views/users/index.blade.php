@@ -193,7 +193,7 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="name" class="form-label">Tipo Docuemnto</label>
+                        <label for="name" class="form-label">Tipo docuemnto</label>
                         <select name="document_id" id="" class="form-select">
                             <option value="">Seleccionar...</option>
                             @foreach($documents as $document)
@@ -202,7 +202,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="company" class="form-label">Número Documento</label>
+                        <label for="company" class="form-label">Número documento</label>
                         <input type="number" class="form-control" name="document_number" required>
                     </div>
                     <div class="mb-3">
@@ -210,7 +210,7 @@
                         <input type="text" class="form-control" name="address"  required>
                     </div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Numero Celular</label>
+                        <label for="position" class="form-label">Teléfono</label>
                         <input type="number" class="form-control" name="cellphone" required>
                     </div>
                     <div class="mb-3">
@@ -219,7 +219,7 @@
                     </div>
                     <div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Genero</label>
+                        <label for="position" class="form-label">Género</label>
                         <select name="gender" id="" class="form-select">
                             <option value="gender">Seleccionar...</option>
                             <option value="masculino">Masculino</option>

@@ -28,7 +28,7 @@
                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Nombre Producto</th>
+                                            <th>Nombre producto</th>
                                             <td><input type="text" class="form-control" name="name" value="{{ $product->name }}" required></td>
                                         </tr>
                                         <tr>
@@ -36,7 +36,7 @@
                                             <td><input type="text" class="form-control" name="reference" value="{{ $product->reference }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Descripcion</th>
+                                            <th>Descripción</th>
                                             <td><input type="text" class="form-control" name="description" value="{{ $product->description }}" required></td>
                                         </tr>
                                         <tr>
@@ -48,11 +48,54 @@
                                             <td><input type="number" class="form-control" name="price" value="{{ $product->price }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Medida</th>
+                                            <th>Medida en pies (cueros y pieles)</th>
                                             <td><input type="number" class="form-control" name="measure" value="{{ $product->measure }}" required></td>
                                         </tr>
-                                
-                                
+                                        <tr>
+                                            <th>Compañia</th>
+                                            <td>
+                                                <select name="company_id" class="form-select">
+                                                    <option value="">Seleccionar...</option>
+                                                    @foreach($companies as $company)
+                                                        <option value="{{ $company->id }}" @if($product->company_id == $company->id) selected @endif>{{ $company->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Proveedor</th>
+                                            <td>
+                                                <select name="provider_id" class="form-select">
+                                                    <option value="">Seleccionar...</option>
+                                                    @foreach($providers as $provider)
+                                                        <option value="{{ $provider->id }}" @if($product->provider_id == $provider->id) selected @endif>{{ $provider->business_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Color</th>
+                                            <td>
+                                                <select name="color_id" class="form-select">
+                                                    <option value="">Seleccionar...</option>
+                                                    @foreach($colors as $color)
+                                                        <option value="{{ $color->id }}" @if($product->color_id == $color->id) selected @endif>{{ $color->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <th>Subcategoria</th>
+                                            <td>
+                                                <select name="subcategory_id" class="form-select">
+                                                    <option value="">Seleccionar...</option>
+                                                    @foreach($subcategories as $subcategory)
+                                                        <option value="{{ $subcategory->id }}" @if($product->subcategory_id == $subcategory->id) selected @endif>{{ $subcategory->name }} - {{ $subcategory-> categoryName }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
                                         <br>
                                         <br>
                                         <tr> 

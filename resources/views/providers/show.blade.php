@@ -22,7 +22,7 @@
                                 <td>{{ $provider->admin_name }}</td>
                             </tr>
                             <tr>
-                                <th>Telefono / celular</th>
+                                <th>Teléfono</th>
                                 <td>{{ $provider->cellphone }}</td>
                             </tr>
                             <tr>

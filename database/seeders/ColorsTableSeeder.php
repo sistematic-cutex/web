@@ -14,6 +14,23 @@ class ColorsTableSeeder extends Seeder
     public function run(): void
     {
         $colors = [
+
+            [
+                'name' => 'Blanco',
+                'color_code' => '#FDFEFE ',
+
+            ],
+            [
+                'name' => 'Café',
+                'color_code' => '#784212',
+
+            ],
+            [
+                'name' => 'Rosado',
+                'color_code' => '#D98880',
+
+            ],
+
             [
                 'name' => 'Negro',
                 'color_code' => '#17202A',
@@ -34,6 +51,7 @@ class ColorsTableSeeder extends Seeder
                 'color_code' => '#8E44AD  ',
 
             ],
+
 
         ];
         foreach ($colors as $color) {

@@ -37,9 +37,9 @@
                                 <tr>
 
                                     <th></th>
-                                    <th>Nombre Comercial</th>
+                                    <th>Nombre comercial</th>
                                     <th>Dirección</th>
-                                    <th>Telefono</th>
+                                    <th>Teléfono</th>
                                     <th>Estado</th>
                                     @if (Auth::user()->rol_id==1)
                                     <th style="width: 82px;">Acciones</th>
@@ -178,7 +178,7 @@
                         <input type="text" class="form-control" name="admin_name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="company" class="form-label">Telefono / celular</label>
+                        <label for="company" class="form-label">Teléfono</label>
                         <input type="text" class="form-control" name="cellphone" required>
                     </div>
                     <div class="mb-3">

@@ -37,15 +37,15 @@
                                             <td><input type="text" class="form-control" name="surnames" value="{{ $client->surnames }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Numero Documento</th>
+                                            <th>Número documento</th>
                                             <td><input type="number" class="form-control" name="document_number" value="{{ $client->document_number }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Direccion</th>
+                                            <th>Dirección</th>
                                             <td><input type="text" class="form-control" name="address" value="{{ $client->address }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Celular</th>
+                                            <th>Teléfono</th>
                                             <td><input type="number" class="form-control" name="cellphone" value="{{ $client->cellphone }}" required></td>
                                         </tr>
                                         <tr>

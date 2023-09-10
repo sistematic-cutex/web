@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Invoice;
 use App\Models\Document;
+use App\Models\User;
 
 class ClientsController extends Controller
 {
@@ -53,7 +54,7 @@ class ClientsController extends Controller
         $client = Client::find($id);
         $invoices = Invoice::join('users', 'invoices.user_id', '=', 'users.id')
             ->where('invoices.client_id', $id)
-            ->select('invoices.*', 'users.names as user_names', 'users.surnames as user_surnames')
+            ->select('invoices.*', 'users.name as user_name', 'users.surname as user_surname')
             ->get();
 
         return view('clients.invoice', compact('invoices', 'client'));

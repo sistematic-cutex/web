@@ -56,7 +56,7 @@
                             </tr>
                           
                             <tr>
-                                <th>Número Documento</th>
+                                <th>Número documento</th>
                                 <td>{{ $user->document_number }}</td>
                             </tr>
                             <tr>
@@ -64,7 +64,7 @@
                                 <td>{{ $user->address }}</td>
                             </tr>
                             <tr>
-                                <th>Cellphone</th>
+                                <th>Teléfono</th>
                                 <td>{{ $user->cellphone }}</td>
                             </tr>
                             <tr>

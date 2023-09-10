@@ -36,7 +36,7 @@
                                             <td><input type="text" class="form-control" name="admin_name" value="{{ $provider->admin_name }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Telefono / celular</th>
+                                            <th>Teléfono</th>
                                             <td><input type="text" class="form-control" name="cellphone" value="{{ $provider->cellphone }}" required></td>
                                         </tr>
                                         <tr>
