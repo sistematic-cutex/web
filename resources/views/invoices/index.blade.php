@@ -37,6 +37,7 @@
                                     <th>Cliente</th>
                                     <th>Hora</th>
                                     <th>Total</th>
+                                    <th>Estado</th>
                                     <th style="width: 82px;">Acciones</th>
                                 </tr>
                             </thead>
@@ -50,17 +51,24 @@
                                         </td>
                                         <td>{{ $invoice->date_hour }}</td>
                                         <td>{{ $invoice->total }}</td>
+                                        <td>
+                                        <span style="border: none !important; background: transparent"
+                                                    >
+                                                    @if ($invoice->status === 'active')
+                                                        <span class="badge text-bg-success">Creada</span>
+                                                    @else
+                                                        <span class="badge text-bg-danger">Cancelada</span>
+                                                    @endif
+                                                </span>
+                                        </td>
                                         <td class="d-flex">
                                             <form id="formDeleted{{ $invoice->id }}"
                                                 action="{{ route('facturas.eliminar', $invoice->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
-                                            <a class="me-2 btn btn-sm btn-info"
-                                                href="{{ route('facturas.editar', $invoice->id) }}" class="action-icon">
-                                                Editar</a>
                                             <button class="btn btn-danger btn-sm" onclick="deleted({{$invoice->id}})">
-                                                Eliminar
+                                                Cancelar
                                             </button>
                                         </td>
                                     </tr>
@@ -93,16 +101,11 @@
                                     showCancelButton: true,
                                     confirmButtonColor: '#3085d6',
                                     cancelButtonColor: '#d33',
-                                    confirmButtonText: '¡Sí, bórralo!',
+                                    confirmButtonText: '¡Sí, cancelar!',
                                     cancelButtonText: 'No, cancelar!',
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         form.submit();
-                                        Swal.fire(
-                                            '¡Eliminado!',
-                                            'Su factura ha sido eliminado.',
-                                            'success'
-                                        )
                                     }
                                 })
                             }

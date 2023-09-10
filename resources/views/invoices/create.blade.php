@@ -27,7 +27,7 @@
                         </div>
                         <div id="formClient" class="row" style="display: none">
                             <div class="mb-3 col-6">
-                                <label for="name" class="form-label">Nombres</label>
+                                <label for="name" class="form-label">Nombres <b style="color:red">*</b></label>
                                 <input type="text" class="form-control" name="names">
                             </div>
                             <div class="mb-3 col-6">
@@ -35,7 +35,16 @@
                                 <input type="text" class="form-control" name="surnames">
                             </div>
                             <div class="mb-3 col-6">
-                                <label for="company" class="form-label">Numero Documento</label>
+                                <label for="name" class="form-label">Tipo Docuemnto <b style="color:red">*</b></label>
+                                <select name="document_id" id="" class="form-select">
+                                    <option value="">Seleccionar...</option>
+                                    @foreach ($documents as $document)
+                                        <option value="{{ $document->id }}">{{ $document->acronym }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="company" class="form-label">Numero Documento <b style="color:red">*</b></label>
                                 <input type="number" class="form-control" name="document_number">
                             </div>
                             <div class="mb-3 col-6">
@@ -46,18 +55,9 @@
                                 <label for="position" class="form-label">Numero Celular</label>
                                 <input type="number" class="form-control" name="cellphone">
                             </div>
-                            <div class="mb-3 col-6">
+                            <div class="mb-3 col-12">
                                 <label for="position" class="form-label">Email</label>
                                 <input type="email" class="form-control" name="email">
-                            </div>
-                            <div class="mb-3 col-12">
-                                <label for="name" class="form-label">Tipo Docuemnto</label>
-                                <select name="document_id" id="" class="form-select">
-                                    <option value="">Seleccionar...</option>
-                                    @foreach ($documents as $document)
-                                        <option value="{{ $document->id }}">{{ $document->acronym }}</option>
-                                    @endforeach
-                                </select>
                             </div>
                         </div>
                     </div>
@@ -375,6 +375,13 @@
                 ammount: productsSelect
             }
 
+            if(formData.client_id === '') {
+                if (formData.names === '' || formData.document_number === '' || formData.document_id === '') {
+                    alert('Porfavor revisa la informacion')
+                    return
+                }
+            }
+
             if (productsSelect.length === 0) {
                 alert('Selecciona productos')
                 return
@@ -393,6 +400,7 @@
                 type: 'POST',
                 data: JSON.stringify(formData),
                 success: function(response) {
+                    console.log(response)
                     // Realizar acciones con la respuesta del servidor
                     window.location.href = '/facturas'
                 },

@@ -10,7 +10,7 @@ use App\Models\Company;
 
 class UsersController extends Controller
 {
-    ///listar Proveedor
+    ///listar Usuario
     public function index()
     {
         //ORM Eloquent
@@ -27,9 +27,21 @@ class UsersController extends Controller
     // {
     //     return view('providers.create');
     // }
-    //(guardar datos y retornar proveedores)
+    //(guardar datos y retornar usuarios)
     public function store(Request $request)
     {
+        $email = $request['email'];
+
+        $existUser = User::query()
+            ->where('email', '=', $email)
+            ->get();
+
+        if (count($existUser) > 0) {
+            session()->flash('error', 'Email ya registrado');
+            return redirect()->route('usuarios')->with('message', session('error'));
+        }
+
+        return $existUser;
         // Guarda un mensaje de éxito en la sesión
         session()->flash('success', 'Usuario creado correctamente');
 
