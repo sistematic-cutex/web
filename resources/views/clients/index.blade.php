@@ -40,9 +40,9 @@
 
                                     <th></th>
                                     <th>Nombre</th>
-                                    <th>Celular </th>
+                                    <th>Teléfono </th>
                                     <th>Correo electrónico</th>
-                                    <th>Facturas</th>
+                                    <th>Facturas asociadas</th>
                                     @if (Auth::user()->rol_id!= 3)
                                     <th style="width: 82px;">Acciones</th>
                                    @endif

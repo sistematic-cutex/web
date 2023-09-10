@@ -13,9 +13,8 @@
                     <div class="col-2">
                         <div class="page-title-box">
                             <div class="page-title-right">
-                                
-                                    <h4>Lista de facturas del cliente: {{ $client->names }} {{ $client->surnames }}</h4>
-                             
+                                    <h4>Lista de facturas del cliente: </h4>
+                                    <h4>{{ $client->names }} {{ $client->surnames }}</h4>
                             </div>
                         </div>
                     </div>
@@ -29,7 +28,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Hora</th>
-                                    <th>Usuario</th>
+                                    <th>Creado por:</th>
                                     <th>Total</th>  
                                     <th></th>                            
                                 </tr>
@@ -39,7 +38,7 @@
                                     <tr>
                                         <td> {{ $invoice->id }}</td>
                                         <td>{{ $invoice->date_hour }}</td>
-                                        <td>{{ $invoice->user_names }} {{  $invoice->user_surnames }}</td>
+                                        <td>{{ $invoice->user_name }} {{  $invoice->user_surname }}</td>
                                         <td>{{ $invoice->total }}</td>
                                         <td><a href="{{ route('facturas.detalles',$invoice->id) }}">Ver Detalle</a></td>
                                     </tr>

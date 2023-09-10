@@ -18,7 +18,7 @@ class ProductsTableSeeder extends Seeder
                 'photo' => 'https://castafina.com.co/wp-content/uploads/2020/10/DF-009-00.jpg',
                 'name' => ' Correa doble faz',
                 'reference' => '001',
-                'description' => 'Correea doble faz',
+                'description' => 'Correa doble faz',
                 'stock' => '10',
                 'price' => '25000',
                 'measure' => '2',

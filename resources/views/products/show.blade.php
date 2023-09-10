@@ -14,15 +14,15 @@
         
                             <!--Inicio de Tabla Detalles-->
                             <tr>
-                                <th>Nombre Producto</th>
+                                <th>Nombre producto</th>
                                 <td>{{ $product->name}}</td>
                             </tr>
                             <tr>
-                                <th>Reference</th>
+                                <th>Referencia</th>
                                 <td>{{ $product->reference }}</td>
                             </tr>
                             <tr>
-                                <th>Descripcion</th>
+                                <th>Descripción</th>
                                 <td>{{ $product->description }}</td>
                             </tr>
                             <tr>
@@ -34,13 +34,55 @@
                                 <td>{{ $product->price }}</td>
                             </tr>
                             <tr>
-                                <th>Measure</th>
+                                <th>Medida en pies (cueros y pieles)</th>
                                 <td>{{ $product->measure }}</td>
                             </tr>
+                            <tr>
+                                <th>Compañia</th>
+                                <td>
+                                    @foreach($companies as $company)
+                                        @if($product->company_id == $company->id)
+                                            {{ $company->name }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Proveedor</th>
+                                <td>
+                                    @foreach($providers as $provider)
+                                        @if($product->provider_id == $provider->id)
+                                            {{ $provider->business_name }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Color</th>
+                                <td>
+                                    @foreach($colors as $color)
+                                        @if($color->color_id == $color->id)
+                                            {{ $color->name }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Subcategoria</th>
+                                <td>
+                                    @foreach($subcategories as $subcategory)
+                                        @if($subcategory->subcategory_id == $subcategory->id)
+                                            {{ $subcategory->name }} - {{ $subcategory-> categoryName }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
+                            
                             <tr>
                                 <th>Estado:</th>
                                 <td>{{ $product-> status  }}</td>
                             </tr>
+                            
 
                             
                             

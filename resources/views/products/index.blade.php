@@ -39,8 +39,8 @@
 
                                     <th></th>
                                     <th>Imagen</th>
-                                    <th>Nombre Producto</th>
-                                    <th>Cantidad</th>
+                                    <th>Nombre producto</th>
+                                    <th>Cantidad disponible</th>
                                     <th>Referencia</th>
                                     <th>Precio</th>
                                     <th>Estado</th>
@@ -63,8 +63,8 @@
                                         <td>{{ $product->price }}</td>
                                         <td class="d-flex">
                                             <form id="formDeleted{{ $product->id }}"
-                                                action="{{ route('productos.eliminar', $product->id) }}" method="POST">
-                                                @method('DELETE')
+                                                action="{{ route('productos.estado', $product->id) }}" method="POST">
+                                                @method('PUT')
                                                 @csrf
                                                 <button style="border: none !important; background: transparent"
                                                     type="submit">
@@ -157,7 +157,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-light">
-                <h4 class="modal-title" id="myCenterModalLabel">Crear Producto</h4>
+                <h4 class="modal-title" id="myCenterModalLabel">Crear producto</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-4">
@@ -165,7 +165,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Nombre Producto</label>
+                            <label for="name" class="form-label">Nombre producto</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
                         <div class="col-6 mb-3">
@@ -173,7 +173,7 @@
                             <input type="text" class="form-control" name="reference" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="company" class="form-label">Descripcion</label>
+                            <label for="company" class="form-label">Descripción</label>
                             <textarea class="form-control" name="description" cols="30" rows="3" required></textarea>
                         </div>
                         <div class="col-6 mb-3">
@@ -185,7 +185,7 @@
                             <input type="number" class="form-control" name="price" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Medida</label>
+                            <label for="exampleInputEmail1" class="form-label">Medida en pies (cueros y pieles)</label>
                             <input type="number" class="form-control" name="measure" required>
                         </div>
                         <div class="col-6 mb-3">
@@ -215,12 +215,13 @@
                                 @endforeach
                             </select>
                         </div>
+                     
                         <div class="col-6 mb-3">
                             <label for="name" class="form-label">Subcategoria</label>
                             <select name="subcategory_id" id="" class="form-select">
                                 <option value="">Seleccionar...</option>
                                 @foreach ($subcategories as $subcategory)
-                                    <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                                    <option value="{{ $subcategory->id }}">{{ $subcategory->name }} - {{ $subcategory-> categoryName }}</option>
                                 @endforeach
                             </select>
                         </div>

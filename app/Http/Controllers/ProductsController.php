@@ -8,6 +8,7 @@ use App\Models\Company;
 use App\Models\Provider;
 use App\Models\Color;
 use App\Models\Subcategory;
+use App\Models\Category;
 use App\Models\User;
 use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,12 @@ class ProductsController extends Controller
         $companies = Company::all();
         $providers = Provider::all();
         $colors = Color::all();
-        $subcategories = Subcategory::all();
+        $subcategories = Subcategory::query()
+            ->join('categories', 'subcategories.category_id', '=', 'categories.id')
+            ->select('subcategories.id', 'subcategories.name', 'categories.name as categoryName')
+            ->get();
+
+
         $users = User::all();
         //select * from providers
         //me retorna la información en formato json
@@ -77,15 +83,29 @@ class ProductsController extends Controller
     //mostrar detalles
     public function show($id)
     {
+        $companies = Company::all();
+        $providers = Provider::all();
+        $colors = Color::all();
         $product = Product::find($id);
-        return view('products.show', compact('product'));
+        $subcategories = Subcategory::query()
+            ->join('categories', 'subcategories.category_id', '=', 'categories.id')
+            ->select('subcategories.id', 'subcategories.name', 'categories.name as categoryName')
+            ->get();
+        return view('products.show', compact('product', 'companies', 'providers', 'colors', 'subcategories'));
     }
     //editar
     public function edit($id)
     {
         $product = Product::find($id);
+        $companies = Company::all();
+        $providers = Provider::all();
+        $colors = Color::all();
+        $subcategories = Subcategory::query()
+            ->join('categories', 'subcategories.category_id', '=', 'categories.id')
+            ->select('subcategories.id', 'subcategories.name', 'categories.name as categoryName')
+            ->get();
 
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product', 'companies', 'providers', 'colors', 'subcategories'));
     }
     //editar status
     public function editStatus($id)

@@ -59,15 +59,15 @@
                                                 </select>
                                             </td>
                                         </tr>
-                                            <th>Numero Documento</th>
+                                            <th>Número documento</th>
                                             <td><input type="number" class="form-control" name="document_number" value="{{ $user->document_number }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Direccion</th>
+                                            <th>Dirección</th>
                                             <td><input type="text" class="form-control" name="address" value="{{ $user->address }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Celular</th>
+                                            <th>Teléfono</th>
                                             <td><input type="number" class="form-control" name="cellphone" value="{{ $user->cellphone }}" required></td>
                                         </tr>
                                         <tr>
@@ -79,7 +79,7 @@
                                             <td><input type="password" class="form-control"name="password" value="{{ $user->password }}"></td>
                                         </tr> 
                                         <tr>
-                                            <th>genero</th>
+                                            <th>Género</th>
                                             <td>
                                                 <select name="gender" class="form-control">
                                                     <option value="gender">Seleccionar...</option>

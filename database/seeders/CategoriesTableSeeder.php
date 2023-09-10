@@ -15,7 +15,9 @@ class CategoriesTableSeeder extends Seeder
     {
         $categories = [
             ['name' => 'Caballero',],
-            ['name' => 'Dama',]
+            ['name' => 'Dama',],
+            ['name' => 'Cueros y pieles',]
+
         ];
         foreach ($categories as $category) {
             Category::create([
