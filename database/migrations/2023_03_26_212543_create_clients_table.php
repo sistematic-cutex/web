@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('names', 125);
-            $table->string('surnames', 125);
-            $table->string('cellphone', 20);
-            $table->string('email', 125);
-            $table->string('address', 125);
+            $table->string('surnames', 125)->nullable();
+            $table->string('cellphone', 20)->nullable();
+            $table->string('email', 125)->nullable();
+            $table->string('address', 125)->nullable();
             $table->string('document_number', 30);
             $table->enum('status', ["active", "inactive"])->default("active");
             //Declaración llave foranea

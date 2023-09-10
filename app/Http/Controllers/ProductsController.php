@@ -24,7 +24,8 @@ class ProductsController extends Controller
         //ORM Eloquent
         $products = Product::query()
             ->leftJoin('details', 'details.product_id', '=', 'products.id')
-            ->select('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', DB::raw('SUM(IF(details.stock,details.stock,0)) as stockDetail'))
+            ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
+            ->select('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', DB::raw('SUM(IF(details.stock AND invoices.status = "active",details.stock,0)) as stockDetail'))
             ->groupBy('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', 'details.product_id')->get();
         $companies = Company::all();
         $providers = Provider::all();

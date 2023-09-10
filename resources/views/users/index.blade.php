@@ -161,6 +161,18 @@
                                 })
                             </script>
                         @endif
+                        <!--alerta errores-->
+                        @if (session('error'))
+                            <script type="text/javascript">
+                                Swal.fire({
+                                    position: 'center',
+                                    icon: 'error',
+                                    title: '{{ session('error') }}',
+                                    showConfirmButton: false,
+                                    timer: 3500
+                                })
+                            </script>
+                        @endif
                     @endsection
                 </div>
 

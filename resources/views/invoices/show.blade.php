@@ -18,7 +18,7 @@
                                 <td>{{ $invoice->date_hour }}</td>
                             </tr>
                             <tr>
-                                <th>Usuario</th>
+                                <th>Creado por:</th>
                                 <td>{{ $invoice->user_names }} {{ $invoice->user_surnames }}</td>
                             </tr>
                             <tr>
