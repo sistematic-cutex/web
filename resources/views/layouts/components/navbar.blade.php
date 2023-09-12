@@ -31,7 +31,7 @@
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" href="{{ route('notificaciones') }}" role="button">
                     <i class="fe-bell font-22"></i>
-                    <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                    <span id="countNotification" class="badge bg-danger rounded-circle noti-icon-badge">0</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
                     <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
@@ -169,7 +169,7 @@
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>Perfil</span>
                     </a>

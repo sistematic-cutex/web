@@ -126,8 +126,8 @@
             </div>
             <div class="col-12 d-flex justify-end">
                 <button type="submit" class="btn btn-success waves-effect waves-light">Guardar</button>
-                <a href="{{ route('facturas') }}" class="btn btn-danger waves-effect waves-light" data-bs-dismiss="modal"
-                    aria-label="Close">Cancelar</a>
+                <a href="{{ route('facturas') }}" class="btn btn-danger waves-effect waves-light"
+                    >Cancelar</a>
             </div>
         </div>
     </form>

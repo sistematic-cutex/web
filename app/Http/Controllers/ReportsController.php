@@ -23,25 +23,33 @@ class ReportsController extends Controller
         $fechaFin = $request->input('fechaFin');
 
         $totalVentas = DB::table('details')
-            ->whereBetween('created_at', [$fechaInicio, $fechaFin])
+            ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
+            ->where('invoices.status', '=', 'active')
+            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
             ->sum('price');
 
         $totalGrafica = Detail::query()
-            ->select(DB::raw('date(created_at) as date'), DB::raw('SUM(price) as total_price'))
-            ->whereBetween('created_at', [$fechaInicio, $fechaFin])
+            ->select(DB::raw('date(details.created_at) as date'), DB::raw('SUM(details.price) as total_price'))
+            ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
+            ->where('invoices.status', '=', 'active')
+            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
             ->groupBy('date')
             ->get();
 
         $totalVendidos = Product::query()
             ->leftJoin('details', 'details.product_id', '=', 'products.id')
+            ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
             ->select('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', DB::raw('SUM(IF(details.stock,details.stock,0)) as stockDetail'))
+            ->where('invoices.status', '=', 'active')
             ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
             ->orderBy('stockDetail', 'desc')
             ->limit(5)
             ->groupBy('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', 'details.product_id')->get();
 
         $totalProductos = DB::table('details')
-            ->whereBetween('created_at', [$fechaInicio, $fechaFin])
+            ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
+            ->where('invoices.status', '=', 'active')
+            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
             ->sum('stock');
 
 
