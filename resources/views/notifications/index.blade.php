@@ -40,7 +40,12 @@
                                         <td>{{ $notification->message }}</td>
                                         <td>
                                             <div class="text-left">
+                                                @if ($notification->type == 'product')
                                                 <a href="{{ route('productos.detalles', $notification->reference) }}" class="me-2 btn btn-sm btn-info">Ver detalle </a>
+                                                @elseif($notification->type == 'invoice')
+                                                <a href="{{ route('facturas.detalles', $notification->reference) }}" class="me-2 btn btn-sm btn-info">Ver detalle </a>
+                                                @endif
+                                               
                                             </div>
                                         </td>
                                     </tr>

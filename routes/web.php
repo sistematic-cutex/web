@@ -152,4 +152,5 @@ Route::middleware([
 
     //Notificaciones
     Route::get('notificaciones', [NotificationController::class, 'index'])->name('notificaciones');
+    Route::get('notificaciones/contar', [NotificationController::class, 'count'])->name('notificaciones.contar');
 });
