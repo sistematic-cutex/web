@@ -19,7 +19,7 @@
                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Compañia</th>
+                                            <th>Compañia <b style="color:red">*</b></th>
                                             <td>
                                                 <select name="company_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -30,15 +30,15 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Nombre </th>
+                                            <th>Nombre <b style="color:red">*</b> </th>
                                             <td><input type="text" class="form-control" name="name" value="{{ $user->name }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Apellidos</th>
+                                            <th>Apellidos <b style="color:red">*</b></th>
                                             <td><input type="text" class="form-control" name="surname" value="{{ $user->surname }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Rol</th>
+                                            <th>Rol <b style="color:red">*</b> </th>
                                             <td>
                                                 <select name="rol_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -49,7 +49,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Tipo de documento</th>
+                                            <th>Tipo de documento <b style="color:red">*</b> </th>
                                             <td>
                                                 <select name="document_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -59,27 +59,27 @@
                                                 </select>
                                             </td>
                                         </tr>
-                                            <th>Número documento</th>
+                                            <th>Número documento <b style="color:red">*</b> </th>
                                             <td><input type="number" class="form-control" name="document_number" value="{{ $user->document_number }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Dirección</th>
+                                            <th>Dirección <b style="color:red">*</b> </th>
                                             <td><input type="text" class="form-control" name="address" value="{{ $user->address }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Teléfono</th>
+                                            <th>Teléfono <b style="color:red">*</b> </th>
                                             <td><input type="number" class="form-control" name="cellphone" value="{{ $user->cellphone }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Correo electrónico</th>
+                                            <th>Correo electrónico <b style="color:red">*</b> </th>
                                             <td><input type="email" class="form-control" name="email" value="{{ $user->email }}" required></td>
                                         </tr>  
                                         <tr>
-                                            <th>Contraseña</th>
+                                            <th>Contraseña <b style="color:red">*</b> </th>
                                             <td><input type="password" class="form-control"name="password" value="{{ $user->password }}"></td>
                                         </tr> 
                                         <tr>
-                                            <th>Género</th>
+                                            <th>Género <b style="color:red">*</b> </th>
                                             <td>
                                                 <select name="gender" class="form-control">
                                                     <option value="gender">Seleccionar...</option>

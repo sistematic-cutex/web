@@ -169,7 +169,7 @@
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
 
                     <!-- item-->
-                    <a href="" class="dropdown-item notify-item">
+                    <a href="{{ route ('perfil') }}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>Perfil</span>
                     </a>

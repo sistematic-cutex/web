@@ -9,7 +9,9 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,11 @@ Route::middleware([
         return redirect()->route('usuarios');
     })->name('dashboard');
     Route::impersonate();
+    //Perfil de usuario
+    Route::get('/perfil', [ProfileController::class, 'index'])->name('perfil');
+    //Actualizar Usuarios
+    Route::put('perfil/{id}/editar', [ProfileController::class, 'update'])->name('perfil.editar');
+
     //Proveedores
     //listar Proveedor
     Route::get('proveedores', [ProvidersController::class, 'index'])->name('proveedores');

@@ -165,31 +165,31 @@
                     @csrf
                     <div class="row">
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Nombre producto</label>
-                            <input type="text" class="form-control" name="name" required>
+                            <label for="name" class="form-label">Nombre producto <b style="color:red">*</b> </label>
+                            <input type="text" class="form-control" name="name" required >
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Referencia</label>
+                            <label for="name" class="form-label">Referencia <b style="color:red">*</b> </label>
                             <input type="text" class="form-control" name="reference" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="company" class="form-label">Descripción</label>
+                            <label for="company" class="form-label">Descripción <b style="color:red">*</b> </label>
                             <textarea class="form-control" name="description" cols="30" rows="3" required></textarea>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="company" class="form-label">Cantidad</label>
+                            <label for="company" class="form-label">Cantidad <b style="color:red">*</b> </label>
                             <input type="number" class="form-control" name="stock" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Precio</label>
+                            <label for="exampleInputEmail1" class="form-label">Precio <b style="color:red">*</b> </label>
                             <input type="number" class="form-control" name="price" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Medida en pies (cueros y pieles)</label>
+                            <label for="exampleInputEmail1" class="form-label">Medida en pies (cueros y pieles) <b style="color:red">*</b></label>
                             <input type="number" class="form-control" name="measure" required>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Compañia</label>
+                            <label for="name" class="form-label">Compañia <b style="color:red">*</b> </label>
                             <select name="company_id" id="" class="form-select">
                                 <option value="">Seleccionar...</option>
                                 @foreach ($companies as $company)
@@ -198,7 +198,7 @@
                             </select>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Proveedor</label>
+                            <label for="name" class="form-label">Proveedor <b style="color:red">*</b> </label>
                             <select name="provider_id" id="" class="form-select">
                                 <option value="">Seleccionar...</option>
                                 @foreach ($providers as $provider)
@@ -207,7 +207,7 @@
                             </select>
                         </div>
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Color</label>
+                            <label for="name" class="form-label">Color <b style="color:red">*</b> </label>
                             <select name="color_id" id="" class="form-select">
                                 <option value="">Seleccionar...</option>
                                 @foreach ($colors as $color)
@@ -217,7 +217,7 @@
                         </div>
                      
                         <div class="col-6 mb-3">
-                            <label for="name" class="form-label">Subcategoria</label>
+                            <label for="name" class="form-label">Subcategoria <b style="color:red">*</b> </label>
                             <select name="subcategory_id" id="" class="form-select">
                                 <option value="">Seleccionar...</option>
                                 @foreach ($subcategories as $subcategory)
@@ -226,7 +226,7 @@
                             </select>
                         </div>
                         <div class="col-12 mb-3">
-                            <label for="image" class="form-label">Imagen</label>
+                            <label for="image" class="form-label">Imagen <b style="color:red">*</b></label>
                             <input type="file" class="form-control" name="file" required>
                         </div>
                     </div>
