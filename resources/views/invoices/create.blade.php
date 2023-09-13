@@ -69,13 +69,13 @@
                         <h5 class="card-title">Productos</h5>
                         <div class="row">
                             <div class="col-3">
-                                <label for="name" class="form-label">Cantidad</label>
+                                <label for="name" class="form-label">Cantidad <b style="color:red">*</b> </label>
                                 <select id="cantidadProducto" name="ammount" id="" class="form-select"
                                     disabled>
                                 </select>
                             </div>
                             <div class="col-3">
-                                <label for="name" class="form-label">Producto o referencia</label>
+                                <label for="name" class="form-label">Producto o referencia <b style="color:red">*</b> </label>
                                 <select id="productoSeleccionado" name="productSelect" id="" class="form-select">
                                     <option value="">Seleccionar...</option>
                                     @foreach ($products as $product)

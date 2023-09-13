@@ -170,23 +170,23 @@
                 <form action="{{ route('proveedores.guardar') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre comercial</label>
+                        <label for="name" class="form-label">Nombre comercial <b style="color:red">*</b></label>
                         <input type="text" class="form-control" name="business_name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre del administrador</label>
+                        <label for="name" class="form-label">Nombre del administrador <b style="color:red">*</b></label>
                         <input type="text" class="form-control" name="admin_name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="company" class="form-label">Teléfono</label>
+                        <label for="company" class="form-label">Teléfono <b style="color:red">*</b> </label> 
                         <input type="text" class="form-control" name="cellphone" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                        <label for="exampleInputEmail1" class="form-label">Correo electrónico <b style="color:red">*</b> </label>
                         <input type="email" class="form-control" name="email" placeholder="ejemplo@gmail.com" required>
                     </div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Dirección</label>
+                        <label for="position" class="form-label">Dirección <b style="color:red">*</b> </label>
                         <input type="text" class="form-control" name="address" required>
                     </div>
 

@@ -28,31 +28,31 @@
                                 <table class="table table-centered table-nowrap table-hover mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Nombre producto</th>
+                                            <th>Nombre producto <b style="color:red">*</b> </th>
                                             <td><input type="text" class="form-control" name="name" value="{{ $product->name }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Referencia</th>
+                                            <th>Referencia <b style="color:red">*</b> </th>
                                             <td><input type="text" class="form-control" name="reference" value="{{ $product->reference }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Descripción</th>
+                                            <th>Descripción <b style="color:red">*</b></th>
                                             <td><input type="text" class="form-control" name="description" value="{{ $product->description }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Cantidad</th>
+                                            <th>Cantidad <b style="color:red">*</b></th>
                                             <td><input type="number" class="form-control" name="stock" value="{{ $product->stock }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Precio</th>
+                                            <th>Precio <b style="color:red">*</b> </th>
                                             <td><input type="number" class="form-control" name="price" value="{{ $product->price }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Medida en pies (cueros y pieles)</th>
+                                            <th>Medida en pies (cueros y pieles) <b style="color:red">*</b> </th>
                                             <td><input type="number" class="form-control" name="measure" value="{{ $product->measure }}" required></td>
                                         </tr>
                                         <tr>
-                                            <th>Compañia</th>
+                                            <th>Compañia <b style="color:red">*</b> </th>
                                             <td>
                                                 <select name="company_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -63,7 +63,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Proveedor</th>
+                                            <th>Proveedor <b style="color:red">*</b> </th>
                                             <td>
                                                 <select name="provider_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -74,7 +74,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Color</th>
+                                            <th>Color <b style="color:red">*</b></th>
                                             <td>
                                                 <select name="color_id" class="form-select">
                                                     <option value="">Seleccionar...</option>
@@ -85,7 +85,7 @@
                                             </td>
                                         </tr>
                                          <tr>
-                                            <th>Subcategoria</th>
+                                            <th>Subcategoria <b style="color:red">*</b></th>
                                             <td>
                                                 <select name="subcategory_id" class="form-select">
                                                     <option value="">Seleccionar...</option>

@@ -196,16 +196,16 @@
                 <form action="{{ route('usuarios.guardar') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombres</label>
+                        <label for="name" class="form-label">Nombres <b style="color:red">*</b> </label>
                         <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Apellidos</label>
+                        <label for="name" class="form-label">Apellidos <b style="color:red">*</b> </label>
                         <input type="text" class="form-control" name="surname" required>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="name" class="form-label">Tipo docuemnto</label>
+                        <label for="name" class="form-label">Tipo docuemnto <b style="color:red">*</b></label>
                         <select name="document_id" id="" class="form-select">
                             <option value="">Seleccionar...</option>
                             @foreach($documents as $document)
@@ -214,24 +214,24 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="company" class="form-label">Número documento</label>
+                        <label for="company" class="form-label">Número documento <b style="color:red">*</b> </label>
                         <input type="number" class="form-control" name="document_number" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Direccion</label>
+                        <label for="exampleInputEmail1" class="form-label">Direccion <b style="color:red">*</b></label>
                         <input type="text" class="form-control" name="address"  required>
                     </div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Teléfono</label>
+                        <label for="position" class="form-label">Teléfono <b style="color:red">*</b></label>
                         <input type="number" class="form-control" name="cellphone" required>
                     </div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Correo electrónico</label>
+                        <label for="position" class="form-label">Correo electrónico <b style="color:red">*</b></label>
                         <input type="email" class="form-control" name="email" required>
                     </div>
                     <div>
                     <div class="mb-3">
-                        <label for="position" class="form-label">Género</label>
+                        <label for="position" class="form-label">Género <b style="color:red">*</b> </label>
                         <select name="gender" id="" class="form-select">
                             <option value="gender">Seleccionar...</option>
                             <option value="masculino">Masculino</option>
@@ -241,7 +241,7 @@
                     <br>
                   
                     <div class="mb-3">
-                        <label for="name" class="form-label">Rol</label>
+                        <label for="name" class="form-label">Rol <b style="color:red">*</b></label>
                         <select name="rol_id" id="" class="form-select">
                             <option value="">Seleccionar...</option>
                             @foreach($roles as $rol)
@@ -250,7 +250,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Compañia</label>
+                        <label for="name" class="form-label">Compañia <b style="color:red">*</b></label>
                         <select name="company_id" id="" class="form-select">
                             <option value="">Seleccionar...</option>
                             @foreach($companies as $company)
@@ -259,7 +259,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Contraseña<a href=""></a></label>
+                        <label for="name" class="form-label">Contraseña <b style="color:red">*</b><a href=""></a></label>
                         <input type="text" class="form-control" name="password" required>
                     </div>
                     
