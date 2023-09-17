@@ -40,8 +40,6 @@ class UsersController extends Controller
             session()->flash('error', 'Email ya registrado');
             return redirect()->route('usuarios')->with('message', session('error'));
         }
-
-        return $existUser;
         // Guarda un mensaje de éxito en la sesión
         session()->flash('success', 'Usuario creado correctamente');
 

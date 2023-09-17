@@ -62,7 +62,7 @@
                                         <td>{{ $product->reference }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td class="d-flex">
-                                            <form id="formDeleted{{ $product->id }}"
+                                            <form
                                                 action="{{ route('productos.estado', $product->id) }}" method="POST">
                                                 @method('PUT')
                                                 @csrf
@@ -74,9 +74,16 @@
                                                         <span class="badge text-bg-danger">Inactivo</span>
                                                     @endif
                                                 </button>
+                                            </form>
                                         </td>
                                         @if (Auth::user()->rol_id != 2)
                                             <td>
+                                                <form id="formDeleted{{ $product->id }}"
+                                                    action="{{ route('productos.eliminar', $product->id) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+    
+    
                                                 </form>
                                                 <a class="me-2 btn btn-sm btn-info"
                                                     href="{{ route('productos.editar', $product->id) }}"
@@ -109,7 +116,7 @@
                         <script>
                             function deleted(id) {
                                 const form = document.getElementById('formDeleted' + id);
-                                console.log(form);
+                               
                                 Swal.fire({
                                     title: '¿Estás seguro?',
                                     text: "¡No podrás revertir esto!",
@@ -143,6 +150,18 @@
                                 })
                             </script>
                         @endif
+                          <!--alerta errores-->
+                          @if (session('error'))
+                          <script type="text/javascript">
+                              Swal.fire({
+                                  position: 'center',
+                                  icon: 'error',
+                                  title: '{{ session('error') }}',
+                                  showConfirmButton: false,
+                                  timer: 3500
+                              })
+                          </script>
+                      @endif
                     @endsection
                 </div>
 
