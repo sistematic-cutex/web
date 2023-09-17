@@ -22,7 +22,7 @@
                             <!-------------------->
                         </div>
                         <div class="card-body">
-                            <form action="{{route('productos.actualizar', $product->id)}}" method="post">
+                            <form action="{{route('productos.actualizar', $product->id)}}" method="post" enctype="multipart/form-data">
                                 @method('PUT')
                                 @csrf
                                 <table class="table table-centered table-nowrap table-hover mb-0">
@@ -93,6 +93,14 @@
                                                         <option value="{{ $subcategory->id }}" @if($product->subcategory_id == $subcategory->id) selected @endif>{{ $subcategory->name }} - {{ $subcategory-> categoryName }}</option>
                                                     @endforeach
                                                 </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <td>
+                                                <img height="100" width="100" src="{{ asset($product->photo) }}" alt="">
+                                                <input type="file" class="form-control" name="file">
+                                
                                             </td>
                                         </tr>
                                         

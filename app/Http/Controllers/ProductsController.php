@@ -49,10 +49,23 @@ class ProductsController extends Controller
     //(guardar datos y retornar proveedores)
     public function store(Request $request)
     {
+        $reference = $request['reference'];
+
+        $exisProduct = Product::query()
+            ->where('reference', '=', $reference)
+            ->get();
+
+        if (count($exisProduct) > 0) {
+            session()->flash('error', 'Referencia ya registrada');
+            return redirect()->route('productos')->with('message', session('error'));
+        }
+        $ultimoId = Product::latest()->first()->id;
+
 
         $image = $request->file('file');
-
-        $fileName = time() . "_" . $image->getClientOriginalName();
+        $extension = $image->getClientOriginalExtension();
+        //$fileName = time() . "_" . $image->getClientOriginalName(); 
+        $fileName = "producto_"  . $ultimoId + 1 . '.' . $extension;
 
         $image->move(public_path('images'), $fileName);
 
@@ -125,9 +138,20 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         // Guarda un mensaje de éxito en la sesión
+        $image = $request->file('file');
+        if ($image) {
+            $extension = $image->getClientOriginalExtension();
+            //$fileName = time() . "_" . $image->getClientOriginalName(); 
+            $fileName = "producto_"  . $id + 1 . '.' . $extension;
+
+            $image->move(public_path('images'), $fileName);
+
+            $request['photo'] = "images/" . $fileName;
+        }
+
         session()->flash('success', 'Productos actualizado correctamente');
 
-        $product = Product::find($id)->update($request->all());
+        Product::find($id)->update($request->all());
         return redirect()->route('productos')->with('message', session('success'));;
     }
 }
