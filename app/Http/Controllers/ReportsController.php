@@ -25,14 +25,16 @@ class ReportsController extends Controller
         $totalVentas = DB::table('details')
             ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
             ->where('invoices.status', '=', 'active')
-            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
-            ->sum('price');
+            ->whereDate('details.created_at', '>=', $fechaInicio)
+            ->whereDate('details.created_at', '<=', $fechaFin)
+            ->sum('details.price', '*', 'details.stock');
 
         $totalGrafica = Detail::query()
-            ->select(DB::raw('date(details.created_at) as date'), DB::raw('SUM(details.price) as total_price'))
+            ->select(DB::raw('date(details.created_at) as date'), DB::raw('SUM(details.price * details.stock) as total_price'))
             ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
             ->where('invoices.status', '=', 'active')
-            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
+            ->whereDate('details.created_at', '>=', $fechaInicio)
+            ->whereDate('details.created_at', '<=', $fechaFin)
             ->groupBy('date')
             ->get();
 
@@ -41,7 +43,8 @@ class ReportsController extends Controller
             ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
             ->select('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', DB::raw('SUM(IF(details.stock,details.stock,0)) as stockDetail'))
             ->where('invoices.status', '=', 'active')
-            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
+            ->whereDate('details.created_at', '>=', $fechaInicio)
+            ->whereDate('details.created_at', '<=', $fechaFin)
             ->orderBy('stockDetail', 'desc')
             ->limit(5)
             ->groupBy('products.id', 'products.photo', 'products.name', 'products.stock', 'products.reference', 'products.price', 'products.status', 'details.product_id')->get();
@@ -49,7 +52,8 @@ class ReportsController extends Controller
         $totalProductos = DB::table('details')
             ->leftJoin('invoices', 'details.invoice_id', '=', 'invoices.id')
             ->where('invoices.status', '=', 'active')
-            ->whereBetween('details.created_at', [$fechaInicio, $fechaFin])
+            ->whereDate('details.created_at', '>=', $fechaInicio)
+            ->whereDate('details.created_at', '<=', $fechaFin)
             ->sum('stock');
 
 
