@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('message');
-            $table->enum('status', ["read", "unread", "send"])->default("send");
-            $table->enum('type', ["product", "invoice"]);
-            $table->string('reference');
+            $table->string('title')->comment('Titulo de la notificación');
+            $table->text('message')->comment('Mensaje de la notificación');
+            $table->enum('status', ["read", "unread", "send"])->default("send")->comment('Estado de la notificación: leído, no leído, envíado');
+            $table->enum('type', ["product", "invoice"])->comment('Tipo de la notificación: notificación de producto ó de factura');
+            $table->string('reference')->comment('Referencia de la notificación');
             //Declaración de llave foranea
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->comment('Relación de la tabla notificaciones con la tabla usuarios');
             $table->softDeletes();
             $table->timestamps();
         });
