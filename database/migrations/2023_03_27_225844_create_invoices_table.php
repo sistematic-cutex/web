@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date_hour');
-            $table->integer('total');
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->dateTime('date_hour')->comment('Fecha y hora de la factura');
+            $table->integer('total')->comment('Total de la factura');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado de la factura');
             //Declaración de llaves foraneas
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('client_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->comment('Relación de tabla facturas con la tabla usuarios');
+            $table->bigInteger('client_id')->unsigned()->comment('Relación de la tabla facturas con la tabla clientes');
             $table->softDeletes();
             $table->timestamps();
         });
