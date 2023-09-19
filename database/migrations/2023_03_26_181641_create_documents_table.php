@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 125);
-            $table->string('acronym', 10);
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->string('name', 125)->comment('Tipo de documento');
+            $table->string('acronym', 10)->comment('Acrónimo del tipo de documento');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado del tipo de documento');
             $table->softDeletes();
             $table->timestamps();
         });

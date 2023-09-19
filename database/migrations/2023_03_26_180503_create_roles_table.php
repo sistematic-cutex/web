@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 125);
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->string('name', 125)->comment('Nombre del rol');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado del usuario');
             $table->softDeletes();
             $table->timestamps();
         });
