@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 125);
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->string('name', 125)->comment('Nombre de la categoría del producto ');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado de las categorías del producto');
             $table->softDeletes();
             $table->timestamps();
         });
