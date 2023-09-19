@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('colors', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 125);
-            $table->text('color_code');
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->string('name', 125)->comment('Color del producto');
+            $table->text('color_code')->comment('Código del color del producto');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado del color del producto ');
             $table->softDeletes();
             $table->timestamps();
         });

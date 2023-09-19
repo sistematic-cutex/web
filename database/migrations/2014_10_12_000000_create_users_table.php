@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 125);
-            $table->string('surname', 125);
-            $table->string('document_number', 30);
-            $table->string('address', 125);
-            $table->string('cellphone', 20);
-            $table->string('email')->unique();
-            $table->enum('gender', ["masculino", "femenino"]);
-            $table->enum('status', ["active", "inactive"])->default("active");
+            $table->string('name', 125)->comment('Nombre del usuario del sistema');
+            $table->string('surname', 125)->comment('Apellido del usuario del sistema');
+            $table->string('document_number', 30)->comment('Número del documento del usuario del sistema');
+            $table->string('address', 125)->comment('Dirección del usuario del sistema');
+            $table->string('cellphone', 20)->comment('Número del celular del usuario del sistema');
+            $table->string('email')->unique()->comment('Correo electrónico del usuario del sistema');
+            $table->enum('gender', ["masculino", "femenino"])->comment('Género del usuario del sistema');
+            $table->enum('status', ["active", "inactive"])->default("active")->comment('Estado del usuario del sistema');
             //Declaración llave foranea
-            $table->bigInteger('document_id')->unsigned();
-            $table->bigInteger('rol_id')->unsigned();
-            $table->bigInteger('company_id')->unsigned();
+            $table->bigInteger('document_id')->unsigned()->comment('Relación tabla usuarios con tabla documentos');
+            $table->bigInteger('rol_id')->unsigned()->comment('Relación tabla usuarios con tabla roles');
+            $table->bigInteger('company_id')->unsigned()->comment('Relación tabla usuarios con tabla compañias');
             //Unión llave foranea
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
